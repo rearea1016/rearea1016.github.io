@@ -3,9 +3,11 @@
   "projectId": "sample0humanoid",
   "slug": "2611-battery-requirements-for-humanoid-robots-and-drones-vs",
   "publishedAt": 1794011242495,
-  "title": "휴머노이드·드론용 배터리 셀, EV와 무엇이 다르고 누가 만들고 있나",
-  "summary": "This report looks at who is building battery cells for humanoid robots and drones, using public news, company statements and two SBIR company portfolios, from the position of a chemistry student who is still exploring.",
-  "updatedAt": 1794011242495,
-  "postUrl": ""
+  "updatedAt": 1794018962832,
+  "postUrl": "",
+  "titleEn": "How Cells for Humanoids and Drones Differ from EV Cells, and Who Is Making Them",
+  "titleKo": "휴머노이드·드론용 배터리 셀, EV와 무엇이 다르고 누가 만들고 있나",
+  "summaryEn": "A chemistry student's public-source look at who supplies battery cells for humanoids and drones. EV cell makers appear to lead on humanoids, while startups show up in defense-funded drone cells and fast-charge, high-power cells.",
+  "summaryKo": "휴머노이드·드론용 배터리 셀을 누가 만드는지 공개 자료로 살펴본 화학과 학부생의 관찰 노트입니다. 휴머노이드는 EV 셀 대기업, 드론은 국방 자금이 붙는 스타트업 쪽에 있는 것으로 보이며, 대부분 기업 주장이거나 2차 보도 기반입니다."
  }
 ]

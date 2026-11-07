@@ -1,195 +1,231 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="EunAh Roh — exploring physical infrastructure for the AI era, from molecular materials to large-scale systems." />
-  <title>EunAh Roh — Chemistry × Infrastructure</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EunAh Roh · chemistry, batteries, energy</title>
+  <meta name="description" content="EunAh Roh studies chemistry at Korea University and keeps public research notes on batteries and energy markets.">
+  <meta property="og:title" content="EunAh Roh · chemistry, batteries, energy">
+  <meta property="og:description" content="Research notes on batteries and energy markets, plus what I've built and studied.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,400&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="revision.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&family=Jua&family=Gowun+Dodum&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="noise"></div>
-  <header class="topbar">
-    <a class="mark" href="#top" aria-label="EunAh Roh — Home">
-      <span class="element-tile"><b>Ag</b><small>47</small></span>
-      <span class="element-tile element-tile-wordmark"><b>Or</b><small>AH</small></span>
+  <header class="top">
+    <a class="logo" href="#top" aria-label="EunAh Roh, home">
+      <span class="tile-mini"><small>47</small>Ag</span><span class="tile-mini rose"><small>AH</small>Or</span>
     </a>
-    <nav aria-label="Primary navigation">
-      <a href="#research" data-i18n="navResearch">Research</a>
-      <a href="#path" data-i18n="navPath">Path</a>
-      <a href="#build" data-i18n="navBuild">Build</a>
-      <a href="#together" data-i18n="navTogether">Say hello</a>
+    <nav>
+      <a href="notes/"><span class="en">Notes</span><span class="ko">노트</span></a>
+      <a href="#research"><span class="en">Research</span><span class="ko">연구</span></a>
+      <a href="#ventures"><span class="en">Projects</span><span class="ko">프로젝트</span></a>
+      <a href="#hi"><span class="en">Say hi</span><span class="ko">연락</span></a>
     </nav>
-    <button class="lang" id="langToggle" type="button" aria-label="Switch language">KO</button>
+    <button id="lang" class="lang" type="button" aria-label="Switch language"><span class="en">한국어</span><span class="ko">English</span></button>
   </header>
 
   <main id="top">
-    <section class="hero section-shell">
-      <div class="hero-copy">
-        <p class="eyebrow" data-i18n="eyebrow">ENERGY · CHEMISTRY · VENTURES</p>
-        <h1><span data-i18n="heroA">As AI advances, I’ve come to focus on</span><br><em data-i18n="heroB">the physical infrastructure</em><br><span data-i18n="heroC">that powers it.</span></h1>
-        <p class="hero-intro" data-i18n="heroIntro">I’m EunAh Roh. Starting from chemistry, I explore physical infrastructure for the AI era—from molecular materials to devices and large-scale thermal and energy systems.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#research"><span data-i18n="seeResearch">See my research</span><b>↓</b></a>
-          <a class="button text-button" href="mailto:okarea1016@gmail.com"><span data-i18n="startConversation">Send an email</span><b>↗</b></a>
+    <!-- hero -->
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="hello"><span class="en">Hi, I'm EunAh 👋</span><span class="ko">안녕하세요, 노은아예요 👋</span></p>
+        <h1>
+          <span class="en">I study chemistry and keep a public notebook on <mark>batteries</mark> and energy.</span>
+          <span class="ko">화학을 공부하고, <mark>배터리</mark>와 에너지에 대한 공개 노트를 써요.</span>
+        </h1>
+        <p class="lead">
+          <span class="en">Humanoid robots, drones, EVs and data centers all run on batteries. I want to understand who builds them, what is still hard, and where a chemist can help. I'm a second-year at Korea University.</span>
+          <span class="ko">휴머노이드, 드론, 전기차, 데이터센터는 모두 배터리로 움직여요. 누가 그 배터리를 만들고, 아직 무엇이 어렵고, 화학을 하는 사람이 어디서 도울 수 있는지 알고 싶어요. 고려대 화학과 2학년이에요.</span>
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="notes/"><span class="en">Read my notes</span><span class="ko">노트 읽기</span> →</a>
+          <a class="btn" href="#hi"><span class="en">Say hi</span><span class="ko">인사하기</span></a>
         </div>
+        <ul class="chips">
+          <li><span class="en">Batteries</span><span class="ko">배터리</span></li>
+          <li><span class="en">Energy markets</span><span class="ko">에너지 시장</span></li>
+          <li><span class="en">Specialty materials</span><span class="ko">소재</span></li>
+          <li><span class="en">Lab to market</span><span class="ko">연구에서 시장으로</span></li>
+        </ul>
       </div>
 
-      <div class="molecule-stage" id="moleculeStage" aria-label="Interactive molecular diagram">
-        <canvas id="molecule3d" aria-label="Rotatable 3D molecular cage"></canvas>
-        <svg viewBox="0 0 560 560" role="img" aria-hidden="true">
-          <g class="macrocycle">
-            <g class="bonds">
-              <line x1="280" y1="105" x2="348" y2="124"/><line x1="348" y1="124" x2="405" y2="170"/><line x1="405" y1="170" x2="430" y2="230"/><line x1="430" y1="230" x2="410" y2="280"/>
-              <line x1="410" y1="280" x2="430" y2="330"/><line x1="430" y1="330" x2="405" y2="390"/><line x1="405" y1="390" x2="348" y2="436"/><line x1="348" y1="436" x2="280" y2="455"/>
-              <line x1="280" y1="455" x2="212" y2="436"/><line x1="212" y1="436" x2="155" y2="390"/><line x1="155" y1="390" x2="130" y2="330"/><line x1="130" y1="330" x2="150" y2="280"/>
-              <line x1="150" y1="280" x2="130" y2="230"/><line x1="130" y1="230" x2="155" y2="170"/><line x1="155" y1="170" x2="212" y2="124"/><line x1="212" y1="124" x2="280" y2="105"/>
-              <path d="M236 166 L280 145 L324 166 L312 214 L280 232 L248 214 Z"/><path d="M374 236 L414 255 L410 300 L374 324 L334 302 L334 258 Z"/>
-              <path d="M324 394 L280 415 L236 394 L248 346 L280 328 L312 346 Z"/><path d="M186 324 L146 300 L150 255 L186 236 L226 258 L226 302 Z"/>
-              <line class="inner-bond" x1="280" y1="232" x2="280" y2="257"/><line class="inner-bond" x1="334" y1="280" x2="309" y2="280"/><line class="inner-bond" x1="280" y1="328" x2="280" y2="303"/><line class="inner-bond" x1="226" y1="280" x2="251" y2="280"/>
-            </g>
-            <g class="atoms">
-              <circle cx="280" cy="145" r="9"/><circle cx="414" cy="255" r="9"/><circle cx="280" cy="415" r="9"/><circle cx="146" cy="300" r="9"/>
-              <circle class="nitrogen" cx="280" cy="245" r="12"/><circle class="nitrogen" cx="320" cy="280" r="12"/><circle class="nitrogen" cx="280" cy="315" r="12"/><circle class="nitrogen" cx="240" cy="280" r="12"/>
-              <circle class="core" cx="280" cy="280" r="27"/><text x="280" y="285" text-anchor="middle">Nc</text>
-            </g>
-          </g>
-          <g class="electron"><circle class="electron-hit" cx="280" cy="95" r="34"/><circle class="electron-dot" cx="280" cy="95" r="8"/></g>
-        </svg>
-        <div class="orbital orbital-a"></div><div class="orbital orbital-b"></div>
-        <div class="molecule-hud"><span data-i18n="dragMolecule">DRAG MOLECULE · SPIN</span><span data-i18n="throwElectron">GRAB ELECTRON · THROW</span><b id="energyCount">E 00</b></div>
-        <p class="stage-note"><span data-i18n="stageNote">Drag, spin, and throw the electron</span><i></i></p>
+      <div class="table-card">
+        <p class="table-title"><span class="en">EunAh's table of elements</span><span class="ko">은아의 원소 주기율표</span></p>
+        <div class="ptable" id="ptable"></div>
+        <div class="legend">
+          <span class="g-me"><span class="en">me</span><span class="ko">나</span></span>
+          <span class="g-now"><span class="en">now</span><span class="ko">요즘</span></span>
+          <span class="g-study"><span class="en">notes &amp; research</span><span class="ko">노트·연구</span></span>
+          <span class="g-build"><span class="en">projects</span><span class="ko">프로젝트</span></span>
+          <span class="g-school"><span class="en">school &amp; programs</span><span class="ko">학교·프로그램</span></span>
+        </div>
+        <p class="hint"><span class="en">Tap a tile to jump there.</span><span class="ko">칸을 누르면 그 내용으로 이동해요.</span></p>
       </div>
-      <div class="hero-index"><span>01</span></div>
     </section>
 
-    <div class="section-tabs section-shell" id="sectionTabs" role="tablist" aria-label="Portfolio sections">
-      <button class="active" type="button" data-section="manifesto" role="tab"><b>01</b><span data-i18n="tabAbout">About</span></button>
-      <button type="button" data-section="research" role="tab"><b>02</b><span data-i18n="tabResearch">Research</span></button>
-      <button type="button" data-section="path" role="tab"><b>03</b><span data-i18n="tabPath">Journey</span></button>
-      <button type="button" data-section="build" role="tab"><b>04</b><span data-i18n="tabProjects">Projects</span></button>
-      <button type="button" data-section="together" role="tab"><b>05</b><span data-i18n="tabTalk">Say hello</span></button>
-    </div>
+    <!-- now -->
+    <section class="wrap section" id="now">
+      <h2><span class="sym g-now">Nw</span><span class="en">Now</span><span class="ko">요즘 하는 일</span> <small>· 2026.11</small></h2>
+      <ul class="now-list">
+        <li><span class="en">Writing research notes on battery cells for robots and drones.</span><span class="ko">로봇·드론용 배터리 셀에 대한 리서치 노트를 쓰고 있어요.</span></li>
+        <li><span class="en">Making a poster from my molecular thermoelectrics project at the Yoon Group.</span><span class="ko">윤효재 교수님 연구실에서 한 분자 열전 프로젝트로 포스터를 만들고 있어요.</span></li>
+        <li><span class="en">In the finals of an inter-university zero-waste competition, representing Korea University with two teammates.</span><span class="ko">대학 간 제로웨이스트 공모전 본선에 고려대 대표로 팀원 둘과 함께 나가 있어요.</span></li>
+      </ul>
+    </section>
 
-    <section class="manifesto section-shell page-active" id="manifesto">
-      <p class="section-tag">[ POSITION ]</p>
-      <p class="manifesto-line" data-i18n="manifesto">As AI expands, I’m looking in the other direction: toward the heat it creates, the energy it consumes, and the materials that make it physically possible.</p>
-      <div class="interest-row">
-        <span>THERMAL MANAGEMENT</span><span>ENERGY</span><span>NEUROTECH</span><span>MOLECULAR ELECTRONICS</span>
-      </div>
-      <div class="profile-overview">
-        <article class="profile-card education-card">
-          <div class="profile-card-top"><span data-i18n="educationLabel">EDUCATION</span><b>01</b></div>
-          <h3 data-i18n="educationTitle">B.S. Candidate in Chemistry<br>Korea University</h3>
-          <div class="gpa-row"><div><strong>4.00<small>/4.5</small></strong><span data-i18n="majorGpa">Major GPA</span></div><div><strong>3.91<small>/4.5</small></strong><span data-i18n="overallGpa">Overall GPA</span></div></div>
-          <p class="profile-footnote" data-i18n="gpaNote">As of Spring 2026 · Major GPA based on 9 graded credits</p>
+    <!-- notes -->
+    <section class="wrap section" id="notes">
+      <h2><span class="sym g-study">Nt</span><span class="en">Research notes</span><span class="ko">리서치 노트</span></h2>
+      <p class="section-lead">
+        <span class="en">Short reports built from public data, papers and company news. I write down what I could check and say plainly what I couldn't.</span>
+        <span class="ko">공개 데이터, 논문, 기업 소식으로 쓰는 짧은 리포트예요. 확인한 것과 확인하지 못한 것을 나눠서 적어요.</span>
+      </p>
+      <div class="note-cards" id="noteCards"></div>
+      <a class="more" href="notes/"><span class="en">All notes</span><span class="ko">노트 전체 보기</span> →</a>
+    </section>
+
+    <!-- research -->
+    <section class="wrap section" id="research">
+      <h2><span class="sym g-study">Rs</span><span class="en">Research</span><span class="ko">연구</span></h2>
+      <article class="card big">
+        <p class="meta">THE YOON GROUP · KOREA UNIVERSITY · 2026.07–</p>
+        <h3><span class="en">Molecular thermoelectrics</span><span class="ko">분자 열전</span></h3>
+        <p>
+          <span class="en">I'm an undergraduate researcher in Prof. Hyo Jae Yoon's lab. I build junctions from an antiaromatic molecule, Ph-norcorrole, and measure how they carry charge and heat.</span>
+          <span class="ko">윤효재 교수님 연구실의 학부연구생이에요. 반방향족 분자인 Ph-norcorrole로 접합을 만들고, 이 접합이 전하와 열을 어떻게 전달하는지 측정해요.</span>
+        </p>
+        <ol class="steps">
+          <li><span class="en">Make template-stripped gold substrates</span><span class="ko">템플릿 스트리핑 금 기판 만들기</span></li>
+          <li><span class="en">Deposit copper by underpotential deposition</span><span class="ko">UPD(underpotential deposition)로 구리 올리기</span></li>
+          <li><span class="en">Grow self-assembled monolayers</span><span class="ko">자기조립 단분자막 만들기</span></li>
+          <li><span class="en">Measure J–V and thermoelectric response with EGaIn</span><span class="ko">EGaIn 접합으로 J–V와 열전 특성 측정</span></li>
+        </ol>
+        <div class="callout">
+          <p class="callout-title"><span class="en">What I learned first</span><span class="ko">처음 배운 것</span></p>
+          <p>
+            <span class="en">My early measurements jumped around, and my notes weren't detailed enough to say why. Once I started logging temperature, humidity and every prep step, humidity stood out. Lowering it made the results much steadier.</span>
+            <span class="ko">처음엔 측정값이 들쭉날쭉했는데, 기록이 부족해서 이유를 알 수 없었어요. 온도, 습도, 준비 과정을 하나하나 적기 시작하자 습도가 눈에 띄었고, 습도를 낮추니 결과가 훨씬 안정됐어요.</span>
+          </p>
+        </div>
+        <p class="status"><span class="en">Ongoing. I'll share numbers once they're validated.</span><span class="ko">진행 중이에요. 수치는 검증이 끝나면 공유할게요.</span></p>
+      </article>
+    </section>
+
+    <!-- ventures -->
+    <section class="wrap section" id="ventures">
+      <h2><span class="sym g-build">Pj</span><span class="en">Things I've built and tested</span><span class="ko">만들고 시험해 본 것들</span></h2>
+      <p class="section-lead">
+        <span class="en">Before the lab, I spent a year on early-stage startups. It taught me to check demand before believing in an idea, and it's why I now study the technology itself.</span>
+        <span class="ko">연구실에 오기 전 1년 동안 초기 창업을 했어요. 아이디어를 믿기 전에 수요부터 확인하는 법을 배웠고, 그래서 지금은 기술 자체를 공부하고 있어요.</span>
+      </p>
+      <div class="cards">
+        <article class="card" id="monzi">
+          <span class="sym g-build">Mz</span>
+          <p class="meta">MONZI · 2025.12–</p>
+          <h3><span class="en">A playful self-discovery chat for Gen Z</span><span class="ko">Z세대를 위한 대화형 자기 탐색 테스트</span></h3>
+          <p>
+            <span class="en">A team of three. I planned it and built the full MVP. We ran 50+ user interviews and a small Meta ad test: about 4,000 impressions at a 6.47% click-through rate.</span>
+            <span class="ko">3명이 함께 했어요. 기획과 MVP 개발을 맡았어요. 사용자 인터뷰를 50번 넘게 했고, 작은 Meta 광고 테스트로 약 4,000회 노출에 클릭률 6.47%를 얻었어요.</span>
+          </p>
+          <ul class="facts">
+            <li><span class="en">Team lead and main pitch, KU Startup Express Winter 2025 (top 12)</span><span class="ko">KU Startup Express 2025 겨울 본선(Top 12), 팀장·메인 발표</span></li>
+            <li><span class="en">Korea University Startup Club</span><span class="ko">고려대 창업동아리 선정</span></li>
+          </ul>
+          <a class="link" href="https://monzi-khaki.vercel.app/" target="_blank" rel="noreferrer"><span class="en">Try it</span><span class="ko">써보기</span> ↗</a>
         </article>
-        <article class="profile-card">
-          <div class="profile-card-top"><span data-i18n="currentLabel">CURRENT</span><b>02</b></div>
-          <h3 data-i18n="currentTitle">Undergraduate Researcher<br>The Yoon Group</h3>
-          <p data-i18n="currentBody">Studying molecular thermoelectric transport across norcorrole junctions.</p>
-          <span class="state ongoing-state" data-i18n="ongoingState">ONGOING</span>
-        </article>
-        <article class="profile-card venture-card">
-          <div class="profile-card-top"><span data-i18n="ventureLabel">VENTURE EVIDENCE</span><b>03</b></div>
-          <div class="evidence-grid"><div><strong>21</strong><span data-i18n="paidCustomers">paying customers</span></div><div><strong>50</strong><span data-i18n="userInterviews">user interviews</span></div><div><strong>89K</strong><span data-i18n="contentViews">content views</span></div><div><strong>10→50%</strong><span data-i18n="partnerRate">partner acceptance</span></div></div>
-        </article>
-        <article class="profile-card singapore-card">
-          <div class="profile-card-top"><span data-i18n="globalLabel">GLOBAL PROGRAM</span><b>04</b></div>
-          <h3>Social Collider<br>Singapore</h3>
-          <p data-i18n="globalBody">Selected through a Korea University IR process with MONZI. Presented at a group demo day, met NUS Entrepreneurship Society, and visited local startups including Carousell.</p>
-          <span class="state selected-state" data-i18n="selectedState">SELECTED PARTICIPANT</span>
-        </article>
-        <article class="profile-card recognition-card">
-          <div class="profile-card-top"><span data-i18n="recognitionLabel">RECOGNITION</span><b>05</b></div>
-          <ul class="recognition-compact">
-            <li><b>START UP 48</b><span data-i18n="startup48Status">Team 1st · short ideathon</span></li>
-            <li><b>SNU SucSeed</b><span data-i18n="selectedGamtoo">Selected · Gamtoo</span></li>
-            <li><b>KAIST W8 Garage</b><span data-i18n="selectedGamtoo">Selected · Gamtoo</span></li>
-            <li><b>KU Startup Club</b><span data-i18n="kuSelection">Selected · Gamtoo / MONZI</span></li>
-            <li><b>Pre-Social Venture School</b><span data-i18n="selectedGamtoo">Selected · Gamtoo</span></li>
+
+        <article class="card" id="nsir">
+          <span class="sym g-build">Ns</span>
+          <p class="meta">NSIR · START UP 48 · 2025.08–10</p>
+          <h3><span class="en">1st place at START UP 48</span><span class="ko">START UP 48 1위</span></h3>
+          <p>
+            <span class="en">An ideathon hosted by POSTECH for students from SNU, KAIST, POSTECH, Yonsei and Korea University. I met my NSIR teammates there and led our IR pitch. Afterward we kept going and built a prototype for fractional investment in agriculture.</span>
+            <span class="ko">POSTECH이 주최하고 서울대·KAIST·POSTECH·연세대·고려대 학생이 모인 아이디어톤이에요. 여기서 NSIR 팀원들을 처음 만났고 IR 발표를 맡았어요. 대회 뒤에도 같이 농업 조각투자 프로토타입을 만들었어요.</span>
+          </p>
+          <ul class="facts">
+            <li><span class="en">Selected for SNU SucSeed, KAIST W8 Garage, KU Startup Club and Pre-Social Venture School</span><span class="ko">SNU SucSeed, KAIST W8 Garage, 고려대 창업동아리, 예비 소셜벤처 스쿨 선정</span></li>
           </ul>
         </article>
-      </div>
-    </section>
 
-    <section class="research section-shell" id="research">
-      <div class="section-head">
-        <div><p class="section-tag">[ 01 · RESEARCH ]</p><h2 data-i18n="researchTitle">From a single molecule<br>to measurable transport.</h2></div>
-        <p data-i18n="researchIntro">Ongoing undergraduate research at The Yoon Group, Korea University, advised by Prof. Hyo Jae Yoon.</p>
-      </div>
-      <div class="research-grid">
-        <article class="research-main">
-          <div class="status"><i></i><span data-i18n="ongoing">ONGOING RESEARCH</span></div>
-          <p class="kicker">ANTiaromatic NORCORROLE · SAM · EGaIn</p>
-          <h3 data-i18n="researchQuestion">How do metal substrates change charge and thermoelectric transport across an antiaromatic molecular junction?</h3>
-          <p data-i18n="researchWhy">Antiaromatic molecules offer an unusual hypothesis: a narrow HOMO–LUMO gap may help escape the familiar trade-off between electrical conductance and the Seebeck coefficient.</p>
-          <div class="metal-switch" role="group" aria-label="Select substrate">
-            <button class="active" data-metal="Au">Au<small>79</small></button><button data-metal="Cu">Cu<small>29</small></button>
-            <button data-metal="Pd">Pd<small>46</small></button><button data-metal="Pt">Pt<small>78</small></button>
-          </div>
-          <div class="junction" id="junction"><div class="electrode top"></div><div class="sam"></div><div class="electrode bottom"><b id="metalLabel">Au</b></div><div class="flow"></div></div>
-          <p class="figure-note"><span data-i18n="figureNote">Conceptual junction — select a substrate to inspect the experimental path.</span></p>
+        <article class="card" id="insiders">
+          <span class="sym g-build">In</span>
+          <p class="meta">INSIDERS 28TH · 2025.03–2026.02</p>
+          <h3><span class="en">Testing demand, fast</span><span class="ko">빠르게 수요 검증하기</span></h3>
+          <p>
+            <span class="en">At the Yonsei–Korea joint startup society, our team tested a men's hair consulting service. 21 people paid before launch, partner acceptance went from 10% to 50%, and one short reached 89K views. The lesson I keep: views and demand are not the same thing.</span>
+            <span class="ko">연고대 연합 창업학회에서 남성 헤어 컨설팅 서비스를 시험했어요. 출시 전 21명이 결제했고, 제휴 수락률은 10%에서 50%로 올랐고, 숏폼 하나가 8.9만 조회를 넘었어요. 그때 얻은 교훈: 조회수와 수요는 다르다.</span>
+          </p>
         </article>
-        <aside class="research-aside">
-          <p class="aside-label" data-i18n="whatIDo">WHAT I DO</p>
-          <ol class="process-list">
-            <li><b>01</b><span data-i18n="step1">Fabricate template-stripped Au substrates</span></li>
-            <li><b>02</b><span data-i18n="step2">Deposit Cu via underpotential deposition</span></li>
-            <li><b>03</b><span data-i18n="step3">Convert Cu to Pd or Pt via SLRR</span></li>
-            <li><b>04</b><span data-i18n="step4">Form norcorrole self-assembled monolayers</span></li>
-            <li><b>05</b><span data-i18n="step5">Measure J–V and thermoelectric response with EGaIn</span></li>
-            <li><b>06</b><span data-i18n="step6">Analyze data in MATLAB and OriginPro</span></li>
-          </ol>
-          <div class="next-question"><small data-i18n="nextQuestion">NEXT QUESTION</small><p data-i18n="nextQuestionBody">How does immersion time alter SAM formation and transport?</p></div>
-        </aside>
+
+        <article class="card" id="snapscale">
+          <span class="sym g-build">Ss</span>
+          <p class="meta">SNAPSCALE · 2025.12–2026.02</p>
+          <h3><span class="en">Market research intern</span><span class="ko">시장조사 인턴</span></h3>
+          <p>
+            <span class="en">At a startup automating chemical-plant engineering with AI, I went through a client's five years of financials and seven major EPC companies, then talked with people in the industry to check our positioning.</span>
+            <span class="ko">AI로 화학 플랜트 설계를 자동화하는 스타트업에서 고객사의 5년치 재무와 주요 EPC 7개사를 분석하고, 업계 실무자 인터뷰로 포지셔닝을 검증했어요.</span>
+          </p>
+        </article>
+
+        <article class="card" id="zerowaste">
+          <span class="sym g-build">Zw</span>
+          <p class="meta">ZERO-WASTE COMPETITION · 2026.10–</p>
+          <h3><span class="en">Korea University finalist</span><span class="ko">고려대 대표 본선 진출</span></h3>
+          <p>
+            <span class="en">Our team of three wants to turn rice husk ash into a silicate coating that keeps acid sulfate soils in Vietnam's Mekong Delta from turning acidic. I helped design the experiments. The finals are in progress.</span>
+            <span class="ko">세 명이 팀으로, 버려지는 왕겨재를 규산염 코팅제로 만들어 베트남 메콩델타의 잠재 산성황산염토가 산성화되는 걸 막는 아이디어를 내고 있어요. 실험 설계를 함께 했고, 지금 본선 진행 중이에요.</span>
+          </p>
+        </article>
       </div>
     </section>
 
-    <section class="path section-shell" id="path">
-      <div class="section-head"><div><p class="section-tag">[ 02 · PATH ]</p><h2 data-i18n="pathTitle">From market signals<br>to physical systems.</h2></div><p data-i18n="pathIntro">My path has not been linear. Each commercial, technical, and scientific experiment expanded the scale of the problem I could see.</p></div>
-      <div class="story-map">
-        <div class="story-rail">
-          <button class="story-step active" data-story="0"><b>01</b><span data-i18n="story1">Test demand</span><small>INSIDERS</small></button><i></i>
-          <button class="story-step" data-story="1"><b>02</b><span data-i18n="story2">Build prototypes</span><small>GAMTOO · NTER</small></button><i></i>
-          <button class="story-step" data-story="2"><b>03</b><span data-i18n="story3">Map industries</span><small>SNAPSCALE</small></button><i></i>
-          <button class="story-step" data-story="3"><b>04</b><span data-i18n="story4">Study matter</span><small>THE YOON GROUP</small></button>
-        </div>
-        <div class="story-detail">
-          <article class="active" data-panel="0"><div class="story-number">01 / 04</div><div><p class="role">INSIDERS 28TH · 2025</p><h3 data-i18n="insidersTitle">Learned what attention cannot prove.</h3><p data-i18n="insidersBody">Built and tested early ventures. Hair-connect served 21 paying customers and improved partner acceptance from 10% to 50%. An 89K-view short taught me that reach and demand are different variables.</p><strong>VIEWS ≠ DEMAND</strong></div></article>
-          <article data-panel="1"><div class="story-number">02 / 04</div><div><p class="role">GAMTOO · NTER · 2025</p><h3 data-i18n="stoTitle">Turned ambiguous problems into prototypes.</h3><p data-i18n="stoBody">Co-developed an agricultural fractional-investment prototype and initiated partner discussions. Also participated in START UP 48, a short ideathon, as part of the Nter team; the team placed first with a delegated identity-verification concept for older adults.</p><strong>IDEA → TEST</strong></div></article>
-          <article data-panel="2"><div class="story-number">03 / 04</div><div><p class="role">SNAPSCALE · 2025</p><h3 data-i18n="snapTitle">Learned to infer systems from scarce signals.</h3><p data-i18n="snapBody">Analyzed five years of client financials and seven major EPC players. Used public traces—from investor portfolios to hiring and websites—to infer competitive direction.</p><strong>SIGNALS → MAP</strong></div></article>
-          <article data-panel="3"><div class="story-number">04 / 04</div><div><p class="role">THE YOON GROUP · 2026—</p><h3 data-i18n="yoonTitle">Moved from studying markets to studying matter.</h3><p data-i18n="yoonBody">Now building experimental depth in molecular electronics and thermoelectric transport, with a long-term focus on heat and energy infrastructure.</p><strong>MATTER → FUTURE</strong></div></article>
-        </div>
-      </div>
-      <p class="growth-line"><span data-i18n="growthA">What changed?</span> <b data-i18n="growthB">I stopped asking only “Will people want this?” and began asking “What must become technically possible?”</b></p>
-    </section>
-
-    <section class="build section-shell" id="build">
-      <div class="section-head"><div><p class="section-tag">[ 03 · BUILT & EXPLORED ]</p><h2 data-i18n="buildTitle">I think by making<br>something testable.</h2></div></div>
-      <div class="project-grid">
-        <a class="project" href="https://monzi-khaki.vercel.app/" target="_blank" rel="noreferrer"><div class="project-top"><span>PRODUCT · 2026</span><b>↗</b></div><div class="monzi-orb"><span>?</span><i></i><i></i><i></i></div><div><h3>MONZI</h3><p data-i18n="monziBody">A playful, conversational self-discovery experience for Gen Z. Planned and developed the full MVP in two days; iterated through 50 user interviews.</p><ul><li>3-person team</li><li>KU Startup Club</li><li>50 interviews</li></ul></div></a>
-        <article class="project"><div class="project-top"><span>RESEARCH SERIES · 2026—</span><b>01</b></div><div class="data-viz"><i style="--h:40%"></i><i style="--h:25%"></i><i style="--h:7%"></i><i style="--h:18%"></i><i style="--h:10%"></i></div><div><h3>DOE SBIR Field Notes</h3><p data-i18n="sbirBody">An early-stage research series tracing energy technologies supported by the U.S. DOE SBIR program. One company analysis published so far; exploring a future database.</p><a class="inline-link" href="notes/"><span data-i18n="readNotes">Read the notes</span> →</a></div></article>
-        <article class="project quote-card"><div class="project-top"><span>OPERATING PRINCIPLE</span><b>03</b></div><blockquote data-i18n="principle">“A result is not a verdict. It is a signal for the next experiment.”</blockquote><p data-i18n="principleBody">I document decisions, failures, and behavioral patterns—then turn repeated observations into operating rules.</p></article>
+    <!-- school -->
+    <section class="wrap section" id="school">
+      <h2><span class="sym g-school">Ku</span><span class="en">School &amp; programs</span><span class="ko">학교와 프로그램</span></h2>
+      <div class="cards two">
+        <article class="card" id="ku">
+          <span class="sym g-school">Ku</span>
+          <p class="meta">KOREA UNIVERSITY · 2025–</p>
+          <h3><span class="en">B.S. candidate in Chemistry</span><span class="ko">화학과 학사 과정</span></h3>
+          <div class="gpa">
+            <div><b>4.00</b><small>/4.5</small><span class="en">major GPA</span><span class="ko">전공 평점</span></div>
+            <div><b>3.91</b><small>/4.5</small><span class="en">overall GPA</span><span class="ko">전체 평점</span></div>
+          </div>
+          <p class="status"><span class="en">As of Spring 2026</span><span class="ko">2026년 1학기 기준</span></p>
+        </article>
+        <article class="card" id="singapore">
+          <span class="sym g-school">Sg</span>
+          <p class="meta">SOCIAL COLLIDER · SINGAPORE · 2026.01</p>
+          <h3><span class="en">Startup ecosystem immersion</span><span class="ko">싱가포르 스타트업 생태계 프로그램</span></h3>
+          <p>
+            <span class="en">Selected through a Korea University IR round with MONZI. We pitched at an NUS–NTU–KU demo day, met the NUS Entrepreneurship Society and visited local startups, including Carousell.</span>
+            <span class="ko">MONZI로 고려대 IR 선발을 거쳐 참가했어요. NUS·NTU·고려대 공동 데모데이에서 발표하고, NUS 창업학회를 만나고, Carousell 등 현지 스타트업을 방문했어요.</span>
+          </p>
+        </article>
       </div>
     </section>
 
-    <section class="together section-shell" id="together">
-      <div class="collision"><span>YOU</span><i></i><span>ME</span></div>
-      <p class="section-tag">[ 04 · LET’S TALK ]</p>
-      <h2 data-i18n="togetherTitle">Interested in similar questions?<br>Come say hello.</h2>
-      <p class="together-copy" data-i18n="togetherBody">I enjoy meeting people who are curious about how the physical world will change in the AI era. You can be studying any field—or none of these fields yet. If something here resonates, I’d simply be glad to talk.</p>
-      <div class="collab-grid"><div><small data-i18n="curiousAbout">THINGS I’M CURIOUS ABOUT</small><p data-i18n="curiousBody">Molecules → materials → devices → thermal and energy systems → markets</p></div><div><small data-i18n="format">A GOOD START</small><p data-i18n="formatBody">Share a question, a paper, an idea, or just tell me what you have been thinking about lately.</p></div><div><small data-i18n="where">WHERE</small><p data-i18n="discipline">Seoul · Online · Anywhere</p></div></div>
-      <a class="big-email" href="mailto:okarea1016@gmail.com"><span>okarea1016@gmail.com</span><b>↗</b></a>
+    <!-- say hi -->
+    <section class="wrap section hi" id="hi">
+      <h2><span class="sym g-me">Hi</span><span class="en">Say hi</span><span class="ko">인사해요</span></h2>
+      <p class="section-lead">
+        <span class="en">If you're curious about batteries, energy or materials, want to swap a paper, or think I got something wrong in a note, I'd love to hear from you. Any major is welcome.</span>
+        <span class="ko">배터리, 에너지, 소재에 관심 있거나, 논문을 나누고 싶거나, 노트에서 틀린 걸 발견했다면 편하게 연락 주세요. 전공은 상관없어요.</span>
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:okarea1016@gmail.com">okarea1016@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/eunah-roh-a8421236a" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+      </div>
     </section>
   </main>
 
-  <footer class="section-shell"><div class="mark" aria-label="EunAh Roh"><span class="element-tile"><b>Ag</b><small>47</small></span><span class="element-tile element-tile-wordmark"><b>Or</b><small>AH</small></span></div><p>© 2026 EUNAH ROH</p><div><a href="https://www.linkedin.com/in/eunah-roh-a8421236a" target="_blank" rel="noreferrer">LinkedIn ↗</a><span class="muted">GitHub — upon request</span></div></footer>
-  <script src="script.js"></script>
-  <script src="molecule3d.js"></script>
+  <footer class="wrap foot">
+    <span>© 2026 EunAh Roh</span>
+    <span><span class="en">Seoul · usually in a lab or a library</span><span class="ko">서울 · 주로 실험실 아니면 도서관</span></span>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>

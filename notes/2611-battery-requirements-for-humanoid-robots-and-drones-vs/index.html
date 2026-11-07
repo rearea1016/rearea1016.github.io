@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>휴머노이드·드론용 배터리 셀, EV와 무엇이 다르고 누가 만들고 있나 — EunAh Roh</title>
+<meta name="description" content="This report looks at who is building battery cells for humanoid robots and drones, using public news, company statements and two SBIR company portfolios, from the position of a chemistry student who is still exploring.">
+<meta property="og:title" content="휴머노이드·드론용 배터리 셀, EV와 무엇이 다르고 누가 만들고 있나 — EunAh Roh">
+<meta property="og:description" content="This report looks at who is building battery cells for humanoid robots and drones, using public news, company statements and two SBIR company portfolios, from the position of a chemistry student who is still exploring.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rearea1016.github.io/notes/2611-battery-requirements-for-humanoid-robots-and-drones-vs/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,400&family=Noto+Serif+KR:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../notes/notes.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="mark" href="../../" aria-label="EunAh Roh — Home"><span class="element-tile"><b>Ag</b><small>47</small></span><span class="element-tile wordmark"><b>Or</b><small>AH</small></span></a>
+  <nav><a href="../../notes/">Notes</a><a href="../../">Portfolio</a><a href="https://www.linkedin.com/in/eunah-roh-a8421236a">LinkedIn ↗</a></nav>
+</header>
+<main class="shell">
+<p class="eyebrow">[ RESEARCH NOTE ]</p>
+<h1 class="title">휴머노이드·드론용 배터리 셀, EV와 무엇이 다르고 누가 만들고 있나</h1>
+<div class="meta"><span>PUBLISHED 2026-11-07</span></div>
+<article class="doc">
+<aside class="callout note"><p class="label">이 노트에 대하여</p><p>배터리 수요처(휴머노이드·드론·ESS 등)가 넓어지는 가운데, 에너지·인프라 분야 창업을 장기 목표로 둔 화학과 학부생으로서 &quot;휴머노이드·드론용 셀은 누가 만드는가&quot;를 공개 자료로 확인해 봤습니다. 아래는 판단이 아니라 관찰이며, 틀린 부분은 알려 주시면 고치겠습니다.</p>
+<p><strong>Data Limitations</strong></p>
+<ol>
+<li>회사 수치 상당수는 기업 주장이거나 2차 보도(TipRanks 자동 요약, Wikipedia)입니다.</li>
+<li>&quot;휴머노이드·드론이 EV와 다른 사양을 요구한다&quot;는 근거는 업체 블로그와 전문가 발언이며, 같은 조건에서 EV 셀과 비교한 독립 데이터는 찾지 못했습니다.</li>
+<li>SBIR 수상은 두 회사(American Lithium Energy, CAMX Power)만 직접 확인했습니다. sbir.gov 키워드 전수조사는 하지 않았고, 포트폴리오 페이지는 최근 10건만 표시합니다.</li>
+<li>Navy 주제 N21B-T023과 Amprius 셀 사양은 검색 요약으로만 확인했습니다(원문 403).</li>
+<li>Lyten, Sion Power, Group14, Sila와 중국 업체는 근거를 얻지 못해 거의 다루지 못했습니다.</li>
+</ol>
+<p><em>조사 내용 및 양식, 혹은 그 외 무엇이든 DM으로 편하게 조언 주시면 감사하겠습니다</em></p>
+</aside>
+
+
+<aside class="callout summary"><p class="label">Executive Summary</p><ul>
+<li>This report looks at who is building battery cells for humanoid robots and drones, using public news, company statements and two SBIR company portfolios, from the position of a chemistry student who is still exploring.</li>
+<li><strong>Key Finding 1:</strong> In the cases found, humanoid cell supply appears to sit with existing EV cell makers (LG Energy Solution reportedly supplies 46-series cylindrical cells for Atlas, per industry sources; &quot;6+ robot customers&quot;), not new startups. Batteries are reported at only ~2% of robot production cost, so the opening may come from space, power and safety constraints rather than cell price (interpretation).</li>
+<li><strong>Key Finding 2:</strong> Startups stand out in two niches within this sample: silicon-anode/high-power cells for drones, with defense funding (Amprius, Enovix), and ultra-fast-charge/high-power cells (Nyobolt). The confirmed SBIR high-power/high-energy cell awards were mostly defense (Army/USAF/Navy), and no humanoid-specific SBIR award was found. SBIR Phase I/II is a feasibility signal, not commercial success, and much of the data is company claims or secondary reporting.</li>
+</ul>
+</aside>
+
+
+<h1>로봇·드론용 셀이란? &amp; 조사 범위</h1>
+<h2>배경 설명</h2>
+<ul>
+<li>휴머노이드: 한정된 흉곽 부피에서 관절 부하만큼 출력을 뽑는 것이 핵심 과제라는 전문가 인용이 있습니다 [2].</li>
+<li>드론: 비에너지(Wh/kg)가 비행시간을 좌우합니다. 회사 발표는 실리콘 음극이 흑연 음극 대비 최대 2배 에너지밀도라고 합니다 [1].</li>
+<li>같은 &quot;리튬이온&quot;이어도 에너지 쪽(Wh/kg)과 출력 쪽(C-rate)의 설계 균형이 다르다는 것이 업체 쪽 설명입니다 [5].</li>
+</ul>
+<blockquote>
+<p>출처: [2], [1], [5]</p>
+</blockquote>
+<h2>조사 범위</h2>
+<aside class="callout info"><p class="label">이 주제를 조사한 이유</p><ul>
+<li>휴머노이드·드론·자율주행·ESS·데이터센터 모두 배터리가 필요한 시점에서, 새로 생기는 수요를 누가 채우는지 보려 했습니다.</li>
+<li>뉴스·회사 자료·sbir.gov 포트폴리오 2곳·Wikipedia를 봤습니다. 이미 알려진 큰 흐름보다 공급 구도의 패턴을 보려 했습니다.</li>
+</ul>
+</aside>
+
+
+<hr>
+<h1>공급 구도</h1>
+<h2>휴머노이드: EV 셀 대기업이 앞서 있는 모습</h2>
+<p>JoongAng Daily(2026-02-12)는 업계 관계자를 인용해 Atlas에 LGES의 46-series 원통형 삼원계 셀이 쓰인다고 보도했습니다. 공식 계약 공개는 아닙니다 [2]. LGES는 1월 29일 컨퍼런스콜에서 로봇 고객이 6곳 이상이라고 했고 고객명은 밝히지 않았습니다 [2]. Korea Times는 원통형을 6개 로봇 업체에 공급하고 2030년까지 음극 없는(anode-less) 전고체를 휴머노이드용으로 계획한다고 보도했습니다 [3].</p>
+<aside class="callout quote"><p class="label">수치</p><p>배터리 비중: 로봇 생산원가의 약 2% [2]
+로봇 출하 전망: 690,000대(2030) → 5,330만 대(2040), 로봇 배터리 시장 $10.5B(2040) [2]
+휴머노이드 시장 전망: 2035년 $38B, 연 출하 140만 대 초과(Goldman Sachs) [4]</p>
+</aside>
+
+
+<p><em>2% 문장은 기사에 산출 근거가 없습니다. 출하·시장 수치는 SNE Research·Goldman Sachs 전망의 2차 인용이며 실제 출하량이 아닙니다.</em></p>
+<hr>
+<h2>Samsung SDI와 전고체 일정</h2>
+<p>Samsung SDI는 2027년 전고체 양산을 목표로 하고, 이유로 로봇 수요(제한된 공간, 높은 안전성·출력)를 듭니다. Hyundai·Kia와 로봇용 배터리 공동개발 MoU도 있습니다 [3]. Atlas 공급사를 Samsung SDI로 본 보도는 애널리스트 추측이었고, JoongAng은 LGES라고 보도했습니다 [3][2].</p>
+<aside class="callout quote"><p class="label">전고체 일정 (모두 기업 발표, 상용화 전)</p><p>EcoPro: 2027년 이후 양산 목표(파일럿 40톤/년) [4]
+LGES: 2029(EV용 흑연계) · 2030(음극 없는 버전) [4]
+SK On: 2030 → 2029로 앞당김 [4]
+가격 추정: 전고체 $400–600/kWh vs LFP 팩 $81 vs NCM 팩 $128 [4]</p>
+</aside>
+
+
+<p><em>가격은 SNE Research 추정을 battery-tech.net이 인용한 것입니다.</em></p>
+<hr>
+<h2>드론: 국방 자금이 붙는 실리콘 음극 셀</h2>
+<p>Amprius는 미 국방부(Department of War) IBAS의 Project acCELLerate(OTA, 2026-09-23 서명)로 최대 $75M을 받았지만, 대부분 미배정(unfunded)이고 향후 예산과 마일스톤에 달려 있습니다 [1]. 프로젝트는 미국 내 EV 셀 라인을 Group 1~3 드론용 실리콘 음극 셀 생산으로 전환하는 것이며, 운영은 비공개 한국 배터리 업체가 맡습니다 [1].</p>
+<aside class="callout quote"><p class="label">수치</p><p>보조금: 최대 $75M, 의무배정 약 $22M, 프로젝트 총비용 약 $100M [1]
+생산 목표: 2028년 초부터 연 1,200만 셀 [1]
+셀 사양(웹사이트 표): 370 Wh/kg, 10C 연속 / 20C 펄스, 사이클 100% DOD 200회 [11]</p>
+</aside>
+
+
+<p><em>사양은 검색 결과 요약으로만 확인했고 원문은 못 열었습니다. 이 OTA는 SBIR이 아닙니다. 2025년 6월에는 DOE $50M 선정 건이던 $190M Colorado 공장 계획을 취소했다고 보도되었습니다 [1].</em></p>
+<p>Enovix는 TAA 준수·군 인증 한국 공장을 드론·방산 수요 중심으로 우선 운영한다고 발표했습니다(TipRanks 요약본) [9]. 같은 날 220명 감원(총 946명 중)도 발표했습니다 [9].</p>
+<aside class="callout quote"><p class="label">수치</p><p>10월 다국적 이중용도 드론 업체 10만 개 초기 주문, 3분기 말 파이프라인 $216M, 한국 공장 투자 $19M [9]</p>
+</aside>
+
+
+<p><em>주문 금액은 미공개이고 원 보도자료는 읽지 못했습니다.</em></p>
+<hr>
+<h2>출력 특화: 초고속충전·고출력 셀</h2>
+<p>Nyobolt는 Cambridge 대학 Clare Grey 교수 연구(니오븀계 음극)에서 2019년 설립되었고, 2026년 5월 Series C $60M(Symbotic 주도)이 보도되었습니다 [8]. Agility Robotics가 Digit 5에 Nyobolt 배터리를 선택했다는 내용은 Wikipedia가 인용한 The Robot Report 기사에만 근거합니다 [8].</p>
+<aside class="callout quote"><p class="label">수치</p><p>Series C $60M, 평가가치 약 $1B, 누적 약 $160M [8]</p>
+</aside>
+
+
+<p><em>Wikipedia가 The Next Web·Tech Funding News를 인용한 2차 수치입니다.</em></p>
+<p>업체 쪽 설명(Grepow)은 휴머노이드 관절 부하에서 전압 강하·열 상승이 문제라고 합니다 [5].</p>
+<aside class="callout quote"><p class="label">수치 (Grepow 업체 주장)</p><p>GRPA96232(30,000mAh): 9C 방전, 5C 충전, 45℃에서 800사이클 후 80% 용량 [5]
+GRP3980180: 30C 방전효율 90% 이상 [5]
+GRP5764159: 356.4 Wh/kg [5]</p>
+</aside>
+
+
+<p><em>독립 검증이 아닙니다. 356.4 Wh/kg 셀은 본문(10,500mAh)과 이미지 캡션(10,000mAh)이 불일치합니다.</em></p>
+<hr>
+<h2>SBIR/STTR에서 확인한 것</h2>
+<p>American Lithium Energy(ALE)와 CAMX Power의 수상은 모두 국방 용도 위주였고, 휴머노이드를 명시한 과제는 이번에 찾지 못했습니다 [6][7]. Navy 주제 N21B-T023(소형 UAS용 600 Wh/kg 초과 리튬이온)도 검색 요약으로만 확인했습니다 [11].</p>
+<aside class="callout quote"><p class="label">수치</p><p>ALE 누적: $14,087,741(15건) [6]
+CAMX 누적: $22,162,119(31건) [7]</p>
+</aside>
+
+
+<p><em>누적액은 sbir.gov 포트폴리오 기준입니다. 최근 10건만 표시되므로 아래 표와 합이 맞지 않습니다. SBIR Phase I/II는 타당성 신호이지 상업적 성공이 아닙니다.</em></p>
+<hr>
+<h2>해석</h2>
+<p>아래는 제가 수집한 사례에서 읽은 패턴이며 전수조사가 아닙니다.</p>
+<ul>
+<li>배터리가 로봇 원가의 약 2%라는 보도가 맞다면 [2], 틈은 셀 가격보다 공간·출력·안전 제약에서 생기는 것으로 보입니다.</li>
+<li>휴머노이드는 지금 EV 대기업의 원통형 셀이 먼저 들어간 모습입니다(보도 기준). 스타트업은 (a) 국방 자금이 붙는 드론 셀, (b) 충전 속도·출력에 특화된 셀로 나뉘어 보입니다.</li>
+<li>Amprius의 $75M은 &quot;up to&quot;이고 대부분 미배정이라, 금액을 곧 시장 신호로 읽기는 어렵습니다 [1].</li>
+<li>드론 셀 생산이 한국 배터리 업체 라인에서 이뤄질 예정이라 [1], 한국의 소재·공정 인력에게 시사점이 있을 수 있습니다.</li>
+<li>상업 자금(Series B/C)과 정부 자금(SBIR, DoW OTA, DOE)은 성격이 달라 직접 비교하지 않았습니다.</li>
+</ul>
+<hr>
+<h1>기업 분석</h1>
+<h2>Amprius Technologies</h2>
+<blockquote>
+<p>Project acCELLerate: 드론용 실리콘 음극 셀 미국 내 생산</p>
+</blockquote>
+<ul>
+<li>배경: 드론은 비에너지가 비행시간을 좌우합니다 [1].</li>
+<li>일반적 방법과 한계: 흑연 음극 EV 셀. 회사 주장상 한계는 에너지밀도이며 독립 비교는 확인하지 못했습니다 [1].</li>
+<li>차별점: 실리콘 음극 SiCore 셀(370 Wh/kg, 10C 연속/20C 펄스) [11]</li>
+<li>효과: 연 1,200만 셀 목표(2028년 초) [1]</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>Phase</th>
+<th>과제</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2026</td>
+<td>DoW IBAS OTA (SBIR 아님)</td>
+<td>Project acCELLerate</td>
+<td>최대 $75M [1]</td>
+</tr>
+</tbody></table>
+<ul>
+<li>상장사(AMPX). 홈페이지: <a href="https://amprius.com">https://amprius.com</a></li>
+<li><u>대부분 미배정 상태이며, 운영 주체가 한국 배터리 업체라는 점</u></li>
+</ul>
+<hr>
+<h2>Enovix</h2>
+<blockquote>
+<p>드론·방산용 3D 실리콘 배터리</p>
+</blockquote>
+<ul>
+<li>2020년 $45M 조달 보도가 검색에서 확인됩니다 [11].</li>
+<li>2026-11-05 TipRanks 요약: 한국 공장 드론 배터리 용량 확충에 $19M, 10만 개 주문, 파이프라인 $216M. 동시에 약 220명 감원, 연 $8.5M 절감 목표 [9].</li>
+<li>셀 성능 수치는 이번 조사에서 확인하지 못했습니다.</li>
+<li>홈페이지: <a href="https://www.enovix.com">https://www.enovix.com</a></li>
+<li><u>수요 확장과 감원이 같은 날 발표된 점</u></li>
+</ul>
+<hr>
+<h2>Nyobolt</h2>
+<blockquote>
+<p>니오븀계 음극 초고속충전 리튬이온</p>
+</blockquote>
+<ul>
+<li>출신: Cambridge 대학 Clare Grey 교수·Sai Shivareddy 박사의 연구에서 2019년 설립 [8]</li>
+<li>차별점: 니오븀 텅스텐 산화물 음극 고출력 리튬이온. 기사 제목 수준에서 &quot;5~6분 충전&quot;, &quot;20,000 사이클&quot;이 언급되나 본문 근거는 없습니다 [8].</li>
+<li>고객: Symbotic(AMR, 2025년 6월 제한 생산 적용), Agility Robotics Digit 5(2026, 원문 미열람) [8]</li>
+<li>펀딩: 2022 Series B(£50m 제목 보도), 2025-04 $30M, 2026-05 Series C $60M [8]</li>
+<li>에너지밀도는 문서에 없습니다.</li>
+<li>홈페이지: <a href="https://nyobolt.com">https://nyobolt.com</a></li>
+<li><u>고객이 로봇 물류(AMR)·휴머노이드로 이어지는 점</u></li>
+</ul>
+<hr>
+<h2>American Lithium Energy Corp.</h2>
+<blockquote>
+<p>군용 고에너지·고안전 셀 중심</p>
+</blockquote>
+<ul>
+<li>Vista, CA, 직원 70명, 2008년부터 SBIR 수상, Phase I 7건·Phase II 8건 [6]</li>
+<li>2013년 4.0Ah 18650 고율·초고용량 셀부터 2025년 나노 Si/C 각형·파우치 셀까지 [6]</li>
+<li>드론·로봇 직접 언급은 페이지에 없고, 항공(aviation)용 Si 파우치 과제는 있습니다 [6].</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>Phase</th>
+<th>과제</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>Phase II (USAF)</td>
+<td>Advanced Nano Si/C Prismatic Cell with Superior Safety, High Energy Density and Zero Volt (ZV) Stability</td>
+<td>$6,000,000 [6]</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>Phase II (Army)</td>
+<td>Advanced High-Safety, High-Energy Nano Si Pouch Cell, Prismatic Cell Module and Battery for Aviation</td>
+<td>$1,999,999 [6]</td>
+</tr>
+<tr>
+<td>2026</td>
+<td>Phase I (Navy)</td>
+<td>Safe, Robust, Sodium-Ion Battery for Naval Aviation Using Domestically Made Inexpensive Raw Materials</td>
+<td>$239,998 [6]</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>Phase I (Army)</td>
+<td>High Energy, High Power 5V Electrochemical Energy Storage Solution</td>
+<td>$111,496 [6]</td>
+</tr>
+</tbody></table>
+<ul>
+<li>홈페이지: <a href="http://www.americanlithiumenergy.com">http://www.americanlithiumenergy.com</a></li>
+<li><u>나트륨이온 과제가 포함된 점(Navy Phase I)</u></li>
+</ul>
+<hr>
+<h2>CAMX Power LLC</h2>
+<blockquote>
+<p>초고출력·장수명 Li-ion 셀</p>
+</blockquote>
+<ul>
+<li>Lexington, MA, 직원 40명, 2014년부터 SBIR 수상, Phase I 16건·Phase II 15건 [7]</li>
+<li>2025 Army Phase II는 방사선 환경 로봇 등에도 전력을 공급하는 배터리로 서술됩니다 [7]. 드론 직접 언급은 없습니다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>연도</th>
+<th>Phase</th>
+<th>과제</th>
+<th>금액</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025</td>
+<td>Phase II (Army)</td>
+<td>High Performance Rechargeable Battery for Edge Environments</td>
+<td>$1,999,560 [7]</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Phase II (USAF)</td>
+<td>Robust High-Power Batteries for Directed Energy Weapons</td>
+<td>$749,945 [7]</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Phase I (USAF)</td>
+<td>Robust High Power Batteries for Directed Energy Weapons</td>
+<td>$49,960 [7]</td>
+</tr>
+</tbody></table>
+<ul>
+<li>홈페이지: <a href="http://www.camxpower.com">http://www.camxpower.com</a></li>
+</ul>
+<hr>
+<h2>Ionblox</h2>
+<blockquote>
+<p>프리리튬화 실리콘 지배 음극 셀(전기항공·EV용 고출력)</p>
+</blockquote>
+<ul>
+<li>2023-02 기사 기준 Series B $32M, 투자자 Lilium·Applied Ventures·Temasek·Catalus Capital [10]</li>
+<li>INL 측정 인용: 12Ah 파우치 315 Wh/kg, C/3 충전 1,000사이클 초과 [10]. 최대 50% 높은 에너지밀도, 5배 출력은 회사 주장입니다 [10].</li>
+<li>3년 이상 지난 자료이고 드론·휴머노이드 연계는 확인하지 못했습니다.</li>
+<li>홈페이지: <a href="https://www.ionblox.com">https://www.ionblox.com</a></li>
+</ul>
+<hr>
+<h2>LG Energy Solution (참고: 대기업)</h2>
+<ul>
+<li>Atlas에 46-series 원통형 삼원계 셀 공급이 업계 관계자 인용으로 보도되었습니다(공식 확인 아님) [2].</li>
+<li>로봇 고객 6곳 이상, 고객명 비공개 [2]</li>
+<li>음극 없는 전고체를 2030년까지 휴머노이드용으로 계획 [3]</li>
+<li>홈페이지: <a href="https://www.lgensol.com">https://www.lgensol.com</a></li>
+</ul>
+<hr>
+<h1>더 확인하고 싶은 것</h1>
+<ul>
+<li>sbir.gov에서 2023~2026년 humanoid, robot, UAS, battery cell 키워드로 DOE·DoW 수상을 전수 조회하면 로봇용 셀 과제가 실제로 있는지.</li>
+<li>46-series 원통형 셀의 로봇용과 EV용 출력(C-rate)·사이클 사양 차이에 대한 공개 데이터가 있는지.</li>
+<li>Amprius 라인을 운영할 한국 배터리 업체는 어디이고, 드론용 셀 NDAA/TAA 대응 생태계는 어떻게 형성되는지.</li>
+<li>Nyobolt 음극이 Wh/kg 대비 충전 속도를 얼마나 희생하는지, 교체형(swappable) 배터리 표준과 어떻게 맞물리는지.</li>
+<li>UN38.3, UL, 군 규격 등 인증이 스타트업에게 진입장벽인지.</li>
+</ul>
+<hr>
+<h1>출처</h1>
+<ol>
+<li><a href="https://dronexl.co/2026/09/30/amprius-75m-drone-battery-grant-unfunded/">Amprius $75M drone battery grant (DroneXL, 2026-09-30)</a> — Amprius 보조금 금액, 미배정 구조, 의무배정액, 12M 셀 목표, 한국 업체 라인, DOE 공장 취소</li>
+<li><a href="https://www.koreajoongangdaily.com/business/atlas-robot-powered-by-lg-energy-solution-battery-industry-sources-say/12439238">Atlas robot powered by LG Energy Solution battery, industry sources say (Korea JoongAng Daily, 2026-02-12)</a> — 46-series, 원가 중 배터리 2%, LGES 고객 6곳 이상, SNE 전망</li>
+<li><a href="https://www.koreatimes.co.kr/business/tech-science/20260202/samsung-sdi-eyes-robotics-market-with-all-solid-state-batteries">Samsung SDI eyes robotics market with all-solid-state batteries (Korea Times, 2026-02-02)</a> — Samsung SDI 2027 전고체, Hyundai·Kia MoU, LGES 2030 anode-less 계획</li>
+<li><a href="https://battery-tech.net/battery-markets-news/humanoid-robots-emerge-as-early-solid-state-battery-market/">Humanoid Robots Emerge as Early Solid-State Battery Market (Battery-Tech Network, 2026-09-09)</a> — 전고체 일정, SNE 가격 추정, Goldman 전망(BusinessKorea 2차 인용)</li>
+<li><a href="https://www.grepow.com/blog/high-c-rate-vs-high-energy-density-robot-battery-insights-wrc-2026.html">High C-Rate vs High Energy Density: Robot Battery Insights (Grepow, 2026-08-20)</a> — 휴머노이드 부하 특성과 셀 스펙(업체 주장)</li>
+<li><a href="https://www.sbir.gov/portfolio/711757">American Lithium Energy Corp. — SBIR portfolio</a> — 수상 목록·누적 금액</li>
+<li><a href="https://www.sbir.gov/portfolio/679615">CAMX Power LLC — SBIR portfolio</a> — 수상 목록·누적 금액·초록 문장</li>
+<li><a href="https://en.wikipedia.org/wiki/Nyobolt">Nyobolt (Wikipedia)</a> — 설립 배경, 펀딩, Agility·Symbotic 연계(2차 출처)</li>
+<li><a href="https://www.tipranks.com/news/company-announcements/enovix-completes-cost-reduction-plan-and-expands-defense-battery-focus">Enovix completes cost-reduction plan and expands defense battery focus (TipRanks, 2026-11-05)</a> — Enovix 한국 공장·드론 주문·감원(자동 생성 요약)</li>
+<li><a href="https://www.evcandi.com/news/ionblox-receives-us32m-funding-high-power-battery-cells">Ionblox receives US$32m funding for high-power battery cells (EV Central, 2023-02-22)</a> — Ionblox 펀딩·셀 데이터(오래된 자료)</li>
+<li><a href="https://amprius.com/solutions/sicore/">Amprius SiCore page</a> 및 <a href="https://www.highergov.com/contract-opportunity/high-specific-energy-lithium-ion-battery-with-carb-n21b-t023-sbir-9f7c9">Navy N21B-T023 (HigherGov)</a> — Amprius 셀 사양과 Navy 600 Wh/kg 주제(검색 요약으로만 확인, navysbir.com 원문은 403)</li>
+</ol>
+
+</article>
+<p class="back"><a href="../">← ALL NOTES</a></p>
+</main>
+<footer><span>EunAh Roh · RESEARCH NOTES</span><a href="../../">← PORTFOLIO</a></footer>
+</body>
+</html>

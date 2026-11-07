@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EunAh Roh — exploring physical infrastructure for the AI era, from molecular materials to large-scale systems." />
+  <title>EunAh Roh — Chemistry × Infrastructure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,400&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="revision.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="mark" href="#top" aria-label="EunAh Roh — Home">
+      <span class="element-tile"><b>Ag</b><small>47</small></span>
+      <span class="element-tile element-tile-wordmark"><b>Or</b><small>AH</small></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#research" data-i18n="navResearch">Research</a>
+      <a href="#path" data-i18n="navPath">Path</a>
+      <a href="#build" data-i18n="navBuild">Build</a>
+      <a href="#together" data-i18n="navTogether">Say hello</a>
+    </nav>
+    <button class="lang" id="langToggle" type="button" aria-label="Switch language">KO</button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="eyebrow">ENERGY · CHEMISTRY · VENTURES</p>
+        <h1><span data-i18n="heroA">As AI advances, I’ve come to focus on</span><br><em data-i18n="heroB">the physical infrastructure</em><br><span data-i18n="heroC">that powers it.</span></h1>
+        <p class="hero-intro" data-i18n="heroIntro">I’m EunAh Roh. Starting from chemistry, I explore physical infrastructure for the AI era—from molecular materials to devices and large-scale thermal and energy systems.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#research"><span data-i18n="seeResearch">See my research</span><b>↓</b></a>
+          <a class="button text-button" href="mailto:okarea1016@gmail.com"><span data-i18n="startConversation">Send an email</span><b>↗</b></a>
+        </div>
+      </div>
+
+      <div class="molecule-stage" id="moleculeStage" aria-label="Interactive molecular diagram">
+        <canvas id="molecule3d" aria-label="Rotatable 3D molecular cage"></canvas>
+        <svg viewBox="0 0 560 560" role="img" aria-hidden="true">
+          <g class="macrocycle">
+            <g class="bonds">
+              <line x1="280" y1="105" x2="348" y2="124"/><line x1="348" y1="124" x2="405" y2="170"/><line x1="405" y1="170" x2="430" y2="230"/><line x1="430" y1="230" x2="410" y2="280"/>
+              <line x1="410" y1="280" x2="430" y2="330"/><line x1="430" y1="330" x2="405" y2="390"/><line x1="405" y1="390" x2="348" y2="436"/><line x1="348" y1="436" x2="280" y2="455"/>
+              <line x1="280" y1="455" x2="212" y2="436"/><line x1="212" y1="436" x2="155" y2="390"/><line x1="155" y1="390" x2="130" y2="330"/><line x1="130" y1="330" x2="150" y2="280"/>
+              <line x1="150" y1="280" x2="130" y2="230"/><line x1="130" y1="230" x2="155" y2="170"/><line x1="155" y1="170" x2="212" y2="124"/><line x1="212" y1="124" x2="280" y2="105"/>
+              <path d="M236 166 L280 145 L324 166 L312 214 L280 232 L248 214 Z"/><path d="M374 236 L414 255 L410 300 L374 324 L334 302 L334 258 Z"/>
+              <path d="M324 394 L280 415 L236 394 L248 346 L280 328 L312 346 Z"/><path d="M186 324 L146 300 L150 255 L186 236 L226 258 L226 302 Z"/>
+              <line class="inner-bond" x1="280" y1="232" x2="280" y2="257"/><line class="inner-bond" x1="334" y1="280" x2="309" y2="280"/><line class="inner-bond" x1="280" y1="328" x2="280" y2="303"/><line class="inner-bond" x1="226" y1="280" x2="251" y2="280"/>
+            </g>
+            <g class="atoms">
+              <circle cx="280" cy="145" r="9"/><circle cx="414" cy="255" r="9"/><circle cx="280" cy="415" r="9"/><circle cx="146" cy="300" r="9"/>
+              <circle class="nitrogen" cx="280" cy="245" r="12"/><circle class="nitrogen" cx="320" cy="280" r="12"/><circle class="nitrogen" cx="280" cy="315" r="12"/><circle class="nitrogen" cx="240" cy="280" r="12"/>
+              <circle class="core" cx="280" cy="280" r="27"/><text x="280" y="285" text-anchor="middle">Nc</text>
+            </g>
+          </g>
+          <g class="electron"><circle class="electron-hit" cx="280" cy="95" r="34"/><circle class="electron-dot" cx="280" cy="95" r="8"/></g>
+        </svg>
+        <div class="orbital orbital-a"></div><div class="orbital orbital-b"></div>
+        <div class="molecule-hud"><span data-i18n="dragMolecule">DRAG MOLECULE · SPIN</span><span data-i18n="throwElectron">GRAB ELECTRON · THROW</span><b id="energyCount">E 00</b></div>
+        <p class="stage-note"><span data-i18n="stageNote">Drag, spin, and throw the electron</span><i></i></p>
+      </div>
+      <div class="hero-index"><span>01</span></div>
+    </section>
+
+    <div class="section-tabs section-shell" id="sectionTabs" role="tablist" aria-label="Portfolio sections">
+      <button class="active" type="button" data-section="manifesto" role="tab"><b>01</b><span data-i18n="tabAbout">About</span></button>
+      <button type="button" data-section="research" role="tab"><b>02</b><span data-i18n="tabResearch">Research</span></button>
+      <button type="button" data-section="path" role="tab"><b>03</b><span data-i18n="tabPath">Journey</span></button>
+      <button type="button" data-section="build" role="tab"><b>04</b><span data-i18n="tabProjects">Projects</span></button>
+      <button type="button" data-section="together" role="tab"><b>05</b><span data-i18n="tabTalk">Say hello</span></button>
+    </div>
+
+    <section class="manifesto section-shell page-active" id="manifesto">
+      <p class="section-tag">[ POSITION ]</p>
+      <p class="manifesto-line" data-i18n="manifesto">As AI expands, I’m looking in the other direction: toward the heat it creates, the energy it consumes, and the materials that make it physically possible.</p>
+      <div class="interest-row">
+        <span>THERMAL MANAGEMENT</span><span>ENERGY</span><span>NEUROTECH</span><span>MOLECULAR ELECTRONICS</span>
+      </div>
+      <div class="profile-overview">
+        <article class="profile-card education-card">
+          <div class="profile-card-top"><span data-i18n="educationLabel">EDUCATION</span><b>01</b></div>
+          <h3 data-i18n="educationTitle">B.S. Candidate in Chemistry<br>Korea University</h3>
+          <div class="gpa-row"><div><strong>4.00<small>/4.5</small></strong><span data-i18n="majorGpa">Major GPA</span></div><div><strong>3.91<small>/4.5</small></strong><span data-i18n="overallGpa">Overall GPA</span></div></div>
+          <p class="profile-footnote" data-i18n="gpaNote">As of Spring 2026 · Major GPA based on 9 graded credits</p>
+        </article>
+        <article class="profile-card">
+          <div class="profile-card-top"><span data-i18n="currentLabel">CURRENT</span><b>02</b></div>
+          <h3 data-i18n="currentTitle">Undergraduate Researcher<br>The Yoon Group</h3>
+          <p data-i18n="currentBody">Studying molecular thermoelectric transport across norcorrole junctions.</p>
+          <span class="state ongoing-state" data-i18n="ongoingState">ONGOING</span>
+        </article>
+        <article class="profile-card venture-card">
+          <div class="profile-card-top"><span data-i18n="ventureLabel">VENTURE EVIDENCE</span><b>03</b></div>
+          <div class="evidence-grid"><div><strong>21</strong><span data-i18n="paidCustomers">paying customers</span></div><div><strong>50</strong><span data-i18n="userInterviews">user interviews</span></div><div><strong>89K</strong><span data-i18n="contentViews">content views</span></div><div><strong>10→50%</strong><span data-i18n="partnerRate">partner acceptance</span></div></div>
+        </article>
+        <article class="profile-card singapore-card">
+          <div class="profile-card-top"><span data-i18n="globalLabel">GLOBAL PROGRAM</span><b>04</b></div>
+          <h3>Social Collider<br>Singapore</h3>
+          <p data-i18n="globalBody">Selected through a Korea University IR process with MONZI. Presented at a group demo day, met NUS Entrepreneurship Society, and visited local startups including Carousell.</p>
+          <span class="state selected-state" data-i18n="selectedState">SELECTED PARTICIPANT</span>
+        </article>
+        <article class="profile-card recognition-card">
+          <div class="profile-card-top"><span data-i18n="recognitionLabel">RECOGNITION</span><b>05</b></div>
+          <ul class="recognition-compact">
+            <li><b>START UP 48</b><span data-i18n="startup48Status">Team 1st · short ideathon</span></li>
+            <li><b>SNU SucSeed</b><span data-i18n="selectedGamtoo">Selected · Gamtoo</span></li>
+            <li><b>KAIST W8 Garage</b><span data-i18n="selectedGamtoo">Selected · Gamtoo</span></li>
+            <li><b>KU Startup Club</b><span data-i18n="kuSelection">Selected · Gamtoo / MONZI</span></li>
+            <li><b>Pre-Social Venture School</b><span data-i18n="selectedGamtoo">Selected · Gamtoo</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="research section-shell" id="research">
+      <div class="section-head">
+        <div><p class="section-tag">[ 01 · RESEARCH ]</p><h2 data-i18n="researchTitle">From a single molecule<br>to measurable transport.</h2></div>
+        <p data-i18n="researchIntro">Ongoing undergraduate research at The Yoon Group, Korea University, advised by Prof. Hyo Jae Yoon.</p>
+      </div>
+      <div class="research-grid">
+        <article class="research-main">
+          <div class="status"><i></i><span data-i18n="ongoing">ONGOING RESEARCH</span></div>
+          <p class="kicker">ANTiaromatic NORCORROLE · SAM · EGaIn</p>
+          <h3 data-i18n="researchQuestion">How do metal substrates change charge and thermoelectric transport across an antiaromatic molecular junction?</h3>
+          <p data-i18n="researchWhy">Antiaromatic molecules offer an unusual hypothesis: a narrow HOMO–LUMO gap may help escape the familiar trade-off between electrical conductance and the Seebeck coefficient.</p>
+          <div class="metal-switch" role="group" aria-label="Select substrate">
+            <button class="active" data-metal="Au">Au<small>79</small></button><button data-metal="Cu">Cu<small>29</small></button>
+            <button data-metal="Pd">Pd<small>46</small></button><button data-metal="Pt">Pt<small>78</small></button>
+          </div>
+          <div class="junction" id="junction"><div class="electrode top"></div><div class="sam"></div><div class="electrode bottom"><b id="metalLabel">Au</b></div><div class="flow"></div></div>
+          <p class="figure-note"><span data-i18n="figureNote">Conceptual junction — select a substrate to inspect the experimental path.</span></p>
+        </article>
+        <aside class="research-aside">
+          <p class="aside-label" data-i18n="whatIDo">WHAT I DO</p>
+          <ol class="process-list">
+            <li><b>01</b><span data-i18n="step1">Fabricate template-stripped Au substrates</span></li>
+            <li><b>02</b><span data-i18n="step2">Deposit Cu via underpotential deposition</span></li>
+            <li><b>03</b><span data-i18n="step3">Convert Cu to Pd or Pt via SLRR</span></li>
+            <li><b>04</b><span data-i18n="step4">Form norcorrole self-assembled monolayers</span></li>
+            <li><b>05</b><span data-i18n="step5">Measure J–V and thermoelectric response with EGaIn</span></li>
+            <li><b>06</b><span data-i18n="step6">Analyze data in MATLAB and OriginPro</span></li>
+          </ol>
+          <div class="next-question"><small data-i18n="nextQuestion">NEXT QUESTION</small><p data-i18n="nextQuestionBody">How does immersion time alter SAM formation and transport?</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="path section-shell" id="path">
+      <div class="section-head"><div><p class="section-tag">[ 02 · PATH ]</p><h2 data-i18n="pathTitle">From market signals<br>to physical systems.</h2></div><p data-i18n="pathIntro">My path has not been linear. Each commercial, technical, and scientific experiment expanded the scale of the problem I could see.</p></div>
+      <div class="story-map">
+        <div class="story-rail">
+          <button class="story-step active" data-story="0"><b>01</b><span data-i18n="story1">Test demand</span><small>INSIDERS</small></button><i></i>
+          <button class="story-step" data-story="1"><b>02</b><span data-i18n="story2">Build prototypes</span><small>GAMTOO · NTER</small></button><i></i>
+          <button class="story-step" data-story="2"><b>03</b><span data-i18n="story3">Map industries</span><small>SNAPSCALE</small></button><i></i>
+          <button class="story-step" data-story="3"><b>04</b><span data-i18n="story4">Study matter</span><small>THE YOON GROUP</small></button>
+        </div>
+        <div class="story-detail">
+          <article class="active" data-panel="0"><div class="story-number">01 / 04</div><div><p class="role">INSIDERS 28TH · 2025</p><h3 data-i18n="insidersTitle">Learned what attention cannot prove.</h3><p data-i18n="insidersBody">Built and tested early ventures. Hair-connect served 21 paying customers and improved partner acceptance from 10% to 50%. An 89K-view short taught me that reach and demand are different variables.</p><strong>VIEWS ≠ DEMAND</strong></div></article>
+          <article data-panel="1"><div class="story-number">02 / 04</div><div><p class="role">GAMTOO · NTER · 2025</p><h3 data-i18n="stoTitle">Turned ambiguous problems into prototypes.</h3><p data-i18n="stoBody">Co-developed an agricultural fractional-investment prototype and initiated partner discussions. Also participated in START UP 48, a short ideathon, as part of the Nter team; the team placed first with a delegated identity-verification concept for older adults.</p><strong>IDEA → TEST</strong></div></article>
+          <article data-panel="2"><div class="story-number">03 / 04</div><div><p class="role">SNAPSCALE · 2025</p><h3 data-i18n="snapTitle">Learned to infer systems from scarce signals.</h3><p data-i18n="snapBody">Analyzed five years of client financials and seven major EPC players. Used public traces—from investor portfolios to hiring and websites—to infer competitive direction.</p><strong>SIGNALS → MAP</strong></div></article>
+          <article data-panel="3"><div class="story-number">04 / 04</div><div><p class="role">THE YOON GROUP · 2026—</p><h3 data-i18n="yoonTitle">Moved from studying markets to studying matter.</h3><p data-i18n="yoonBody">Now building experimental depth in molecular electronics and thermoelectric transport, with a long-term focus on heat and energy infrastructure.</p><strong>MATTER → FUTURE</strong></div></article>
+        </div>
+      </div>
+      <p class="growth-line"><span data-i18n="growthA">What changed?</span> <b data-i18n="growthB">I stopped asking only “Will people want this?” and began asking “What must become technically possible?”</b></p>
+    </section>
+
+    <section class="build section-shell" id="build">
+      <div class="section-head"><div><p class="section-tag">[ 03 · BUILT & EXPLORED ]</p><h2 data-i18n="buildTitle">I think by making<br>something testable.</h2></div></div>
+      <div class="project-grid">
+        <a class="project" href="https://monzi-khaki.vercel.app/" target="_blank" rel="noreferrer"><div class="project-top"><span>PRODUCT · 2026</span><b>↗</b></div><div class="monzi-orb"><span>?</span><i></i><i></i><i></i></div><div><h3>MONZI</h3><p data-i18n="monziBody">A playful, conversational self-discovery experience for Gen Z. Planned and developed the full MVP in two days; iterated through 50 user interviews.</p><ul><li>3-person team</li><li>KU Startup Club</li><li>50 interviews</li></ul></div></a>
+        <article class="project"><div class="project-top"><span>RESEARCH SERIES · 2026—</span><b>01</b></div><div class="data-viz"><i style="--h:40%"></i><i style="--h:25%"></i><i style="--h:7%"></i><i style="--h:18%"></i><i style="--h:10%"></i></div><div><h3>DOE SBIR Field Notes</h3><p data-i18n="sbirBody">An early-stage research series tracing energy technologies supported by the U.S. DOE SBIR program. One company analysis published so far; exploring a future database.</p><a class="inline-link" href="notes/"><span data-i18n="readNotes">Read the notes</span> →</a></div></article>
+        <article class="project quote-card"><div class="project-top"><span>OPERATING PRINCIPLE</span><b>03</b></div><blockquote data-i18n="principle">“A result is not a verdict. It is a signal for the next experiment.”</blockquote><p data-i18n="principleBody">I document decisions, failures, and behavioral patterns—then turn repeated observations into operating rules.</p></article>
+      </div>
+    </section>
+
+    <section class="together section-shell" id="together">
+      <div class="collision"><span>YOU</span><i></i><span>ME</span></div>
+      <p class="section-tag">[ 04 · LET’S TALK ]</p>
+      <h2 data-i18n="togetherTitle">Interested in similar questions?<br>Come say hello.</h2>
+      <p class="together-copy" data-i18n="togetherBody">I enjoy meeting people who are curious about how the physical world will change in the AI era. You can be studying any field—or none of these fields yet. If something here resonates, I’d simply be glad to talk.</p>
+      <div class="collab-grid"><div><small data-i18n="curiousAbout">THINGS I’M CURIOUS ABOUT</small><p data-i18n="curiousBody">Molecules → materials → devices → thermal and energy systems → markets</p></div><div><small data-i18n="format">A GOOD START</small><p data-i18n="formatBody">Share a question, a paper, an idea, or just tell me what you have been thinking about lately.</p></div><div><small data-i18n="where">WHERE</small><p data-i18n="discipline">Seoul · Online · Anywhere</p></div></div>
+      <a class="big-email" href="mailto:okarea1016@gmail.com"><span>okarea1016@gmail.com</span><b>↗</b></a>
+    </section>
+  </main>
+
+  <footer class="section-shell"><div class="mark" aria-label="EunAh Roh"><span class="element-tile"><b>Ag</b><small>47</small></span><span class="element-tile element-tile-wordmark"><b>Or</b><small>AH</small></span></div><p>© 2026 EUNAH ROH</p><div><a href="https://www.linkedin.com/in/eunah-roh-a8421236a" target="_blank" rel="noreferrer">LinkedIn ↗</a><span class="muted">GitHub — upon request</span></div></footer>
+  <script src="script.js"></script>
+  <script src="molecule3d.js"></script>
+</body>
+</html>
